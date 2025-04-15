@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Product extends Model
 {
@@ -24,6 +25,11 @@ class Product extends Model
         return $this->hasMany(ProductPhoto::class, 'product_id');
     }
 
+    // Add the 'is_new' accessor
+    public function getIsNewAttribute()
+    {
+        return Carbon::parse($this->created_at)->gt(Carbon::now()->subDays(7));
+    }
 
     function services()
     {
@@ -78,6 +84,15 @@ class Product extends Model
         // Sum the 'qnt' values from the related 'ProductQuantity' records
         return $this->attributes()->sum('qnt');
     }
+
+    // Add the 'is_new' accessor
+    public function getTotalSoldAttribute()
+    {
+        $totalQnt = $this->attributes()->sum('total_qnt');
+        $qnt = $this->attributes()->sum('qnt');
+        return $totalQnt - $qnt;
+    }
+
 
     public function getUniqueColors()
     {

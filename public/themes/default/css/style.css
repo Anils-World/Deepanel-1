@@ -11170,14 +11170,15 @@ textarea.form-control-lg {
   font-weight: 400; }
 
 .price {
-  font-size: 1rem; }
+  font-size: 1rem;
+  font-weight: 500;}
 
 .price-sale {
   color: #d6001c; }
 
   .price-old {
     margin-left: .325rem;
-    color: #ed0b0b;
+    color: #979797;
     text-decoration: line-through;
     font-size: 12px;
 }

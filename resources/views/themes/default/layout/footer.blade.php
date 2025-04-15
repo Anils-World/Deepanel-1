@@ -93,7 +93,7 @@
         <div class="container d-md-flex align-items-center">
             <span class="footer-copyright me-auto">©2024 {{ $configData->name }}</span>
             <div class="footer-settings d-md-flex align-items-center">
-                <select id="footerSettingsLanguage" class="form-select form-select-sm bg-transparent border-0"
+                {{-- <select id="footerSettingsLanguage" class="form-select form-select-sm bg-transparent border-0"
                     aria-label="Default select example" name="store-language">
                     <option class="footer-select__option" selected>Bangla</option>
                 </select>
@@ -101,7 +101,10 @@
                 <select id="footerSettingsCurrency" class="form-select form-select-sm bg-transparent border-0"
                     aria-label="Default select example" name="store-language">
                     <option class="footer-select__option" selected>BDT</option>
-                </select>
+                </select> --}}
+                <span class="footer-copyright me-auto">Powered By <a href="https://anilsworld.com/"
+                        style="color: rgb(184, 184, 184)" target="_blank">Anils-World</a></span>
+
             </div>
         </div>
     </div>
