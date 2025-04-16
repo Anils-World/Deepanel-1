@@ -15,8 +15,12 @@ class EmployeeController extends Controller
      */
     public function index()
     {
-        $employee = Admin::where('id', '!=', Auth::guard('admin')->user()->id)->get();
-        return view('backend.admin.employee',[
+        if (Auth::guard('admin')->user()->role == 'superAdmin') {
+            $employee = Admin::where('id', '!=', Auth::guard('admin')->user()->id)->get();
+        } else {
+            $employee = Admin::where('id', '!=', Auth::guard('admin')->user()->id)->where('role', '!=', 'superAdmin')->get();
+        }
+        return view('backend.admin.employee', [
             'employee' => $employee
         ]);
     }
@@ -36,8 +40,8 @@ class EmployeeController extends Controller
     {
         $validated = $request->validate([
             'name'      => 'required|max:255',
-            'email'     => 'required|max:255',
-            'number'    => 'required|max:11',
+            'email'     => 'required|max:255|unique:admins,email',
+            'number'    => 'required|max:11|unique:admins,number',
             'password'  => 'required|min:8',
         ]);
         //Pure File //Path Name // Prefix for name // size alternative
@@ -69,7 +73,7 @@ class EmployeeController extends Controller
     public function edit($admin)
     {
         $employee = Admin::find($admin);
-        return view('backend.admin.edit',[
+        return view('backend.admin.edit', [
             'employee' => $employee
         ]);
     }

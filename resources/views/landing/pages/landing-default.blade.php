@@ -22,36 +22,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Meta Pixel Code -->
     <script>
-        ! function(f, b, e, v, n, t, s) {
-            if (f.fbq) return;
-            n = f.fbq = function() {
-                n.callMethod ?
-                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-            };
-            if (!f._fbq) f._fbq = n;
-            n.push = n;
-            n.loaded = !0;
-            n.version = '2.0';
-            n.queue = [];
-            t = b.createElement(e);
-            t.async = !0;
-            t.src = v;
-            s = b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t, s)
-        }(window, document, 'script',
-            'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '730073492259194');
-        fbq('track', 'PageView');
-        // Track AddToCart Event
-        fbq('track', 'AddToCart', {
-            content_ids: ['12345'], // Replace with your product ID
-            content_type: 'product',
-            value: 500, // Replace with your product price
-            currency: 'BDT'
-        });
+        var fbPixelId = "{{ config('facebook.pixel_id') }}"; // Get Pixel ID from config
+
+        if (fbPixelId) {
+            ! function(f, b, e, v, n, t, s) {
+                if (f.fbq) return;
+                n = f.fbq = function() {
+                    n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+                };
+                if (!f._fbq) f._fbq = n;
+                n.push = n;
+                n.loaded = !0;
+                n.version = '2.0';
+                n.queue = [];
+                t = b.createElement(e);
+                t.async = !0;
+                t.src = v;
+                s = b.getElementsByTagName(e)[0];
+                s.parentNode.insertBefore(t, s);
+            }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+
+            fbq('init', fbPixelId); // Dynamically set the Pixel ID
+            fbq('track', 'PageView'); // Track PageView event
+        }
     </script>
-    <noscript><img height="1" width="1" style="display:none"
-            src="https://www.facebook.com/tr?id=730073492259194&ev=PageView&noscript=1" /></noscript>
+
+    <noscript>
+        <img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id={{ config('facebook.pixel_id') }}&ev=PageView&noscript=1" />
+    </noscript>
+
     <title>{{ $product->name }}</title>
     <link rel="stylesheet" href="{{ asset('review/ladning.css') }}">
 </head>

@@ -42,7 +42,9 @@ class AdminController extends Controller
             'total_cat'     => $cat,
             'order'         => $order,
             'camp'          => $camp,
-            'chart'         => $this->chart()
+            'chart'         => $this->chartMonth(),
+            'chart2'        => $this->chart2(),
+            'orders' => $pendingOrder
         ]);
     }
     function admin_login()
@@ -209,6 +211,153 @@ class AdminController extends Controller
                 'cancel' => $cancelData,
             ],
         ];
+        return $chartData;
+    }
+
+
+    public function chartMonth()
+    {
+        // Get data for the last 12 months grouped by month and order status
+        $monthlyData = Order::selectRaw('MONTH(created_at) as month, YEAR(created_at) as year, order_status, COUNT(*) as total')
+            ->whereBetween('created_at', [Carbon::now()->subYear(), Carbon::now()]) // Get last 12 months
+            ->groupBy('year', 'month', 'order_status')
+            ->orderBy('year')
+            ->orderBy('month')
+            ->get();
+
+        // Initialize arrays
+        $labels = [];
+        $dataByMonth = [];
+
+        // Prepare the structure to store data for each month
+        foreach ($monthlyData as $data) {
+            $monthLabel = Carbon::createFromDate($data->year, $data->month, 1)->format('F Y'); // Format as Jan 2025, Feb 2025, etc.
+
+            // Add month to labels if it's not already there
+            if (!in_array($monthLabel, $labels)) {
+                $labels[] = $monthLabel;
+            }
+
+            // Initialize the array if not already set
+            if (!isset($dataByMonth[$monthLabel])) {
+                $dataByMonth[$monthLabel] = [
+                    'delivered' => 0,
+                    'damage' => 0,
+                    'cancel' => 0,
+                ];
+            }
+
+            // Assign the counts to the correct status
+            switch ($data->order_status) {
+                case 'delieverd':
+                    $dataByMonth[$monthLabel]['delivered'] = $data->total;
+                    break;
+                case 'damage':
+                    $dataByMonth[$monthLabel]['damage'] = $data->total;
+                    break;
+                case 'cancel':
+                    $dataByMonth[$monthLabel]['cancel'] = $data->total;
+                    break;
+            }
+        }
+
+        // Now we need to build the data arrays for each status
+        $deliveredData = [];
+        $damageData = [];
+        $cancelData = [];
+
+        foreach ($labels as $month) {
+            $deliveredData[] = $dataByMonth[$month]['delivered'];
+            $damageData[] = $dataByMonth[$month]['damage'];
+            $cancelData[] = $dataByMonth[$month]['cancel'];
+        }
+
+        // Prepare the final chart data for the monthly sales chart
+        $chartData = [
+            'labels' => $labels,
+            'datasets' => [
+                'delivered' => $deliveredData,
+                'damage' => $damageData,
+                'cancel' => $cancelData,
+            ],
+        ];
+
+        return $chartData;
+    }
+
+    public function chart2()
+    {
+        // Get data for the last 7 days grouped by order status
+        $dailyData = Order::selectRaw('DATE(created_at) as date, order_status, SUM(price) as total')
+            ->whereBetween('created_at', [Carbon::now()->subDays(7), Carbon::now()]) // Get last 7 days
+            ->groupBy('date', 'order_status')
+            ->orderBy('date', 'asc')
+            ->get();
+
+        // Initialize arrays
+        $labels = [];
+        $dataByDay = [];
+
+        // Prepare the structure to store data for each day
+        foreach ($dailyData as $data) {
+            $dateLabel = Carbon::parse($data->date)->format('Y-m-d'); // Format as 2025-04-10
+
+            // Add date to labels if it's not already there
+            if (!in_array($dateLabel, $labels)) {
+                $labels[] = $dateLabel;
+            }
+
+            // Initialize the array for the specific date if not already set
+            if (!isset($dataByDay[$dateLabel])) {
+                $dataByDay[$dateLabel] = [
+                    'delivered' => 0,
+                    'cancel' => 0,
+                    'pending' => 0,
+                    'shipping' => 0,
+                ];
+            }
+
+            // Assign the total sales to the correct order status
+            switch ($data->order_status) {
+                case 'delieverd':
+                    $dataByDay[$dateLabel]['delivered'] = $data->total;
+                    break;
+                case 'cancel':
+                    $dataByDay[$dateLabel]['cancel'] = $data->total;
+                    break;
+                case 'pending':
+                    $dataByDay[$dateLabel]['pending'] = $data->total;
+                    break;
+                case 'shipping':
+                    $dataByDay[$dateLabel]['shipping'] = $data->total;
+                    break;
+            }
+        }
+
+        // Now we need to build the data arrays for each status
+        $deliveredData = [];
+        $cancelData = [];
+        $pendingData = [];
+        $shippingData = [];
+
+        foreach ($labels as $date) {
+            $deliveredData[] = $dataByDay[$date]['delivered'];
+            $cancelData[] = $dataByDay[$date]['cancel'];
+            $pendingData[] = $dataByDay[$date]['pending'];
+            $shippingData[] = $dataByDay[$date]['shipping'];
+        }
+
+        // Prepare the final chart data for the daily sales chart
+        $chartData = [
+            'labels' => $labels,
+            'datasets' => [
+                'delivered' => $deliveredData,
+                'cancel' => $cancelData,
+                'pending' => $pendingData,
+                'shipping' => $shippingData,
+            ],
+        ];
+
         return $chartData;
     }
 }

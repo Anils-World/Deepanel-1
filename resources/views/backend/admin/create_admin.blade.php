@@ -1,9 +1,9 @@
 @extends('backend.master')
 @section('content')
-<section class="content-main">
-    <div class="row">
-        <div class="col-lg-12">
-            {{-- <div class="card mb-4">
+    <section class="content-main">
+        <div class="row">
+            <div class="col-lg-12">
+                {{-- <div class="card mb-4">
                 <div class="card-header">
                     <h4>Basic</h4>
                 </div>
@@ -52,85 +52,93 @@
                     </form>
                 </div>
             </div> <!-- card end// --> --}}
-            <div class="card mb-4">
-                <div class="card-header">
-                    <h4>Add Admin</h4>
-                </div>
-                <div class="card-body">
-                    <form action="{{ route('create.role.admin') }}" method="POST" enctype="multipart/form-data">
-                        @csrf
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="mb-4">
-                                    <label for="product_name" class="form-label">Name</label>
-                                    <input type="text" placeholder="Entire Name" class="form-control @error('name') is-invalid @enderror" name="name">
-                                    @error('name')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h4>Add Admin</h4>
+                    </div>
+                    <div class="card-body">
+                        <form action="{{ route('create.role.admin') }}" method="POST" enctype="multipart/form-data">
+                            @csrf
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="mb-4">
+                                        <label for="product_name" class="form-label">Name</label>
+                                        <input type="text" placeholder="Entire Name"
+                                            class="form-control @error('name') is-invalid @enderror" name="name"
+                                            value="{{ old('name') }}">
+                                        @error('name')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="mb-4">
+                                        <label for="product_name" class="form-label">Email</label>
+                                        <input type="email" placeholder="Entire Email"
+                                            class="form-control @error('email') is-invalid @enderror" name="email"
+                                            value="{{ old('email') }}">
+                                        @error('email')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="mb-4">
+                                        <label for="product_name" class="form-label">Number</label>
+                                        <input type="number" placeholder="Entire Number"
+                                            class="form-control @error('number') is-invalid @enderror"
+                                            value="{{ old('number') }}" name="number">
+                                        @error('number')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="mb-4">
+                                        <label for="product_name" class="form-label">Role</label>
+                                        <select class="form-select" name="role">
+                                            <option value="businessManager"> Business Manager </option>
+                                            <option value="contentManager"> Content Manager </option>
+                                            <option value="employee"> Employee </option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="mb-4">
+                                        <label for="product_name" class="form-label">Profile</label>
+                                        <input type="file" class="form-control" name="profile">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="mb-4">
+                                        <label for="product_name" class="form-label">Password</label>
+                                        <input type="password" class="form-control @error('password') is-invalid @enderror"
+                                            placeholder="Set Password" name="password">
+                                        @error('number')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="mb-4">
+                                        <label for="product_name" class="form-label"></label>
+                                        <button type="submit"
+                                            class="btn btn-light rounded font-sm mr-5 text-body hover-up">+ Admin</button>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-lg-6">
-                                <div class="mb-4">
-                                    <label for="product_name" class="form-label">Email</label>
-                                    <input type="email" placeholder="Entire Email" class="form-control @error('email') is-invalid @enderror"  name="email">
-                                    @error('email')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="mb-4">
-                                    <label for="product_name" class="form-label">Number</label>
-                                    <input type="number" placeholder="Entire Number" class="form-control @error('number') is-invalid @enderror" name="number">
-                                    @error('number')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="mb-4">
-                                    <label for="product_name" class="form-label">Role</label>
-                                    <select class="form-select" name="role">
-                                        <option value="businessManager"> Business Manager </option>
-                                        <option value="contentManager"> Content Manager </option>
-                                        <option value="employee"> Employee </option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="mb-4">
-                                    <label for="product_name" class="form-label">Profile</label>
-                                    <input type="file" class="form-control" name="profile">
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="mb-4">
-                                    <label for="product_name" class="form-label">Password</label>
-                                    <input type="password" class="form-control @error('password') is-invalid @enderror" placeholder="Set Password" name="password">
-                                    @error('number')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="mb-4">
-                                    <label for="product_name" class="form-label"></label>
-                                    <button type="submit" class="btn btn-light rounded font-sm mr-5 text-body hover-up">+ Admin</button>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div> <!-- card end// -->
+                        </form>
+                    </div>
+                </div> <!-- card end// -->
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 @endsection

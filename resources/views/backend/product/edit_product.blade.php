@@ -169,10 +169,12 @@
                         <div>
                             <a href="{{ route('product.index') }}" name="btn"
                                 class="btn btn-md rounded font-sm hover-up">Back</a>
-                            <button type="submit" name="btn" value="deactive"
-                                class="btn btn-light rounded font-sm mr-5 text-body hover-up">Save to draft</button>
+                            @if ($request->status == 'active')
+                                <button type="submit" name="btn" value="deactive"
+                                    class="btn btn-light rounded font-sm mr-5 text-body hover-up">Draft</button>
+                            @endif
                             <button type="submit" name="btn" value="active"
-                                class="btn btn-md rounded font-sm hover-up">Update</button>
+                                class="btn btn-md rounded font-sm hover-up">{{ $request->status == 'deactive' ? 'Active' : 'Update' }}</button>
                         </div>
                     </div>
                 </div>

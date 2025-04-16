@@ -14,7 +14,7 @@
                             <div class="mb-3">
                                 <label class="form-label">Name</label>
                                 <input class="form-control @error('name') is-invalid @enderror" placeholder="Your Name"
-                                    type="text" name="name">
+                                    type="text" name="name" value="{{ old('name') }}">
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -24,7 +24,7 @@
                             <div class="mb-3">
                                 <label class="form-label">Email</label>
                                 <input class="form-control @error('email') is-invalid @enderror" placeholder="Your email"
-                                    type="email" name="email">
+                                    type="email" name="email" value="{{ old('email') }}">
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -37,7 +37,8 @@
                                     <div class="col-4"> <input class="form-control" value="+88" type="text"
                                             name="country_code" readonly> </div>
                                     <div class="col-8"> <input class="form-control @error('number') is-invalid @enderror"
-                                            placeholder="Phone Number" type="number" name="number">
+                                            placeholder="Phone Number" type="number" name="number"
+                                            value="{{ old('number') }}">
                                         @error('number')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -49,7 +50,9 @@
                             <div class="mb-3">
                                 <label class="form-label">Role</label>
                                 <select class="form-select" name="role">
-                                    <option value="superAdmin" selected> Super Admin </option>
+                                    @if (Auth::guard('admin')->user()->role == 'superAdmin')
+                                        <option value="superAdmin" selected> Super Admin </option>
+                                    @endif
                                     <option value="businessManager"> Business Manager </option>
                                     <option value="contentManager"> Content Manager </option>
                                     <option value="employee"> Employee </option>
@@ -100,8 +103,10 @@
                                                 <td class="text-end">
                                                     <a href="{{ route('employee.edit', $request->id) }}"
                                                         class="btn btn-md rounded font-sm">Edit</a>
-                                                    <a href="{{ route('employee.destroy', $request->id) }}"
-                                                        class="btn btn-md bg-warning rounded font-sm">Delete</a>
+                                                    @if (Auth::guard('admin')->user()->role == 'superAdmin')
+                                                        <a href="{{ route('employee.destroy', $request->id) }}"
+                                                            class="btn btn-md bg-warning rounded font-sm">Delete</a>
+                                                    @endif
 
                                                 </td>
                                             @endif

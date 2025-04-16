@@ -183,15 +183,14 @@ class AdminOrder extends Controller
         $user = User::find($user_id);
 
         //get pathao information
-        if ($user && $user->number) {
-            $request = new PathaoUserSuccessRateRequest([
-                'phone' => $user->number
-            ]);
-            $patahoData = PathaoCourier::GET_USER_SUCCESS_RATE($request);
-            $pathao = $patahoData;
-        }
 
-        // dd($pathao);
+        // if ($user && $user->number) {
+        //     $request = new PathaoUserSuccessRateRequest([
+        //         'phone' => $user->number
+        //     ]);
+        //     $patahoData = PathaoCourier::GET_USER_SUCCESS_RATE($request);
+        //     $pathao = $patahoData;
+        // }
 
 
         $data = Order::where('user_id', $user_id)->orderBy('id', 'DESC')->get();
