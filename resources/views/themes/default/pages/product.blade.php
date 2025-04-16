@@ -151,13 +151,15 @@
                                 <div class="swiper-wrapper">
                                     @foreach ($product->uniqueAttributes() as $key => $image)
                                         <div class="swiper-slide product-single__image-item"><img loading="lazy"
-                                                class="h-auto" src="{{ asset('files/product/' . $image->image) }}"
+                                                class="h-auto"
+                                                src="{{ asset('files/product/' . 'preview-' . $image->image) }}"
                                                 width="104" height="104" alt="Product Image"></div>
                                     @endforeach
                                     @if ($product->images)
                                         @foreach ($product->images as $key => $image)
                                             <div class="swiper-slide product-single__image-item"><img loading="lazy"
-                                                    class="h-auto" src="{{ asset('files/product/' . $image->image) }}"
+                                                    class="h-auto"
+                                                    src="{{ asset('files/product/' . 'preview-' . $image->image) }}"
                                                     width="104" height="104" alt="Product Image"></div>
                                         @endforeach
                                     @endif
@@ -255,7 +257,7 @@
                                             class="swatch swatch-color js-swatch {{ $index == 0 ? 'color-active' : '' }}"
                                             for="color-{{ $color['id'] }}"
                                             style="background-color: {{ $color['code'] }};">
-                                            <img src="{{ asset('files/product/' . $color['image']) }}"
+                                            <img src="{{ asset('files/product/' . 'preview-' . $color['image']) }}"
                                                 style="border-radius: .6rem;" alt="{{ $color['name'] }}">
                                         </label>
                                     @endforeach

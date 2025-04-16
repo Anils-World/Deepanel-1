@@ -82,7 +82,7 @@ class CategoryController extends Controller
 
         if ($request->category_image) {
             Photo::delete('files/category', $category->category_image);
-            Photo::upload($request->category_image, 'files/category', 'CAT');
+            Photo::upload($request->category_image, 'files/category', 'CAT', [1100, 1100]);
             $category->category_image  = Photo::$name;
         }
 

@@ -34,7 +34,7 @@ class BannerController extends Controller
             'banner_image'          => 'required',
             'banner_description'    => 'required',
         ]);
-        Photo::upload($request->banner_image, 'files/banner', $request->banner_title, [966, 542]);
+        Photo::upload($request->banner_image, 'files/banner', 'BAN', [966, 542], false);
         Banner::insert([
             'banner_category'       => $request->banner_category,
             'banner_title'          => $request->banner_title,
@@ -72,8 +72,8 @@ class BannerController extends Controller
         $banner->banner_description     = $request->banner_description;
 
         if ($request->banner_image) {
-            Photo::delete('files/banner',$banner->banner_image);
-            Photo::upload($request->banner_image, 'files/banner', 'BAN',[966, 542]);
+            Photo::delete('files/banner', $banner->banner_image);
+            Photo::upload($request->banner_image, 'files/banner', 'BAN', [966, 542], false);
             $banner->banner_image  = Photo::$name;
         }
         $banner->save();
@@ -84,7 +84,7 @@ class BannerController extends Controller
     {
         $banner = Banner::find($id);
         if ($banner->banner_image) {
-            Photo::delete('files/banner',$banner->banner_image);
+            Photo::delete('files/banner', $banner->banner_image);
         }
         $banner->delete();
         return back();

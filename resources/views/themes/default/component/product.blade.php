@@ -3,14 +3,14 @@
         <a href="{{ route('product.view', $product->slugs) }}">
             @if ($product->images)
                 @foreach ($product->images as $key => $image)
-                    <img loading="lazy" src="{{ asset('files/product/' . $image->image) }}" width="330" height="400"
-                        alt="{{ $product->name }}" class="pc__img">
+                    <img loading="lazy" src="{{ asset('files/product/' . 'preview-' . $image->image) }}" width="330"
+                        height="400" alt="{{ $product->name }}" class="pc__img">
                 @endforeach
             @endif
             @if ($product->attributes && $product->attributes->first())
                 @foreach ($product->attributes->take(2) as $key => $image)
-                    <img loading="lazy" src="{{ asset('files/product/' . $image->image) }}" width="330" height="400"
-                        alt="{{ $product->name }}" class="pc__img pc__img-second">
+                    <img loading="lazy" src="{{ asset('files/product/' . 'preview-' . $image->image) }}" width="330"
+                        height="400" alt="{{ $product->name }}" class="pc__img pc__img-second">
                 @endforeach
             @endif
         </a>
