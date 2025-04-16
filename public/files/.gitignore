@@ -1,0 +1,13 @@
+# Ignore all image files in all subdirectories
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.bmp
+*.webp
+
+# Do not ignore .gitignore itself
+!.gitignore
+
+# Allow tracking of a placeholder or text file
+!important-note.txt
