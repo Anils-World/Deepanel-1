@@ -1073,7 +1073,7 @@
                                     <div class="swiper-slide product-card">
                                         <div class="slide-image-custom">
                                             <img src="{{ asset('files/product/' . $image->image) }}" loading="lazy"
-                                                alt="Euphoria review">
+                                                alt="anilsworld review">
                                         </div>
                                     </div>
                                 @endforeach
@@ -1082,7 +1082,7 @@
                                         <div class="swiper-slide product-card">
                                             <div class="slide-image-custom">
                                                 <img src="{{ asset('files/product/' . $image->image) }}"
-                                                    loading="lazy" alt="Euphoria review">
+                                                    loading="lazy" alt="anilsworld review">
                                             </div>
                                         </div>
                                     @endforeach
@@ -1215,77 +1215,77 @@
                         @endforeach --}}
                         <div class="swiper-slide product-card">
                             <div class="slide-image-custom">
-                                <img src="{{ asset('review/1.jpeg') }}" loading="lazy" alt="Euphoria review">
+                                <img src="{{ asset('review/1.jpeg') }}" loading="lazy" alt="anilsworld review">
                             </div>
                         </div>
                         <div class="swiper-slide product-card">
                             <div class="slide-image-custom">
-                                <img src="{{ asset('review/2.jpeg') }}" loading="lazy" alt="Euphoria review">
+                                <img src="{{ asset('review/2.jpeg') }}" loading="lazy" alt="anilsworld review">
                             </div>
                         </div>
                         <div class="swiper-slide product-card">
                             <div class="slide-image-custom">
-                                <img src="{{ asset('review/3.jpeg') }}" loading="lazy" alt="Euphoria review">
+                                <img src="{{ asset('review/3.jpeg') }}" loading="lazy" alt="anilsworld review">
                             </div>
                         </div>
                         <div class="swiper-slide product-card">
                             <div class="slide-image-custom">
-                                <img src="{{ asset('review/4.jpeg') }}" loading="lazy" alt="Euphoria review">
+                                <img src="{{ asset('review/4.jpeg') }}" loading="lazy" alt="anilsworld review">
                             </div>
                         </div>
                         <div class="swiper-slide product-card">
                             <div class="slide-image-custom">
-                                <img src="{{ asset('review/5.jpeg') }}" loading="lazy" alt="Euphoria review">
+                                <img src="{{ asset('review/5.jpeg') }}" loading="lazy" alt="anilsworld review">
                             </div>
                         </div>
                         <div class="swiper-slide product-card">
                             <div class="slide-image-custom">
-                                <img src="{{ asset('review/6.jpeg') }}" loading="lazy" alt="Euphoria review">
+                                <img src="{{ asset('review/6.jpeg') }}" loading="lazy" alt="anilsworld review">
                             </div>
                         </div>
                         <div class="swiper-slide product-card">
                             <div class="slide-image-custom">
-                                <img src="{{ asset('review/7.jpeg') }}" loading="lazy" alt="Euphoria review">
+                                <img src="{{ asset('review/7.jpeg') }}" loading="lazy" alt="anilsworld review">
                             </div>
                         </div>
                         <div class="swiper-slide product-card">
                             <div class="slide-image-custom">
-                                <img src="{{ asset('review/8.jpeg') }}" loading="lazy" alt="Euphoria review">
+                                <img src="{{ asset('review/8.jpeg') }}" loading="lazy" alt="anilsworld review">
                             </div>
                         </div>
                         <div class="swiper-slide product-card">
                             <div class="slide-image-custom">
-                                <img src="{{ asset('review/9.jpeg') }}" loading="lazy" alt="Euphoria review">
+                                <img src="{{ asset('review/9.jpeg') }}" loading="lazy" alt="anilsworld review">
                             </div>
                         </div>
                         <div class="swiper-slide product-card">
                             <div class="slide-image-custom">
-                                <img src="{{ asset('review/10.jpeg') }}" loading="lazy" alt="Euphoria review">
+                                <img src="{{ asset('review/10.jpeg') }}" loading="lazy" alt="anilsworld review">
                             </div>
                         </div>
                         <div class="swiper-slide product-card">
                             <div class="slide-image-custom">
-                                <img src="{{ asset('review/11.jpeg') }}" loading="lazy" alt="Euphoria review">
+                                <img src="{{ asset('review/11.jpeg') }}" loading="lazy" alt="anilsworld review">
                             </div>
                         </div>
                         <div class="swiper-slide product-card">
                             <div class="slide-image-custom">
-                                <img src="{{ asset('review/12.jpeg') }}" loading="lazy" alt="Euphoria review">
+                                <img src="{{ asset('review/12.jpeg') }}" loading="lazy" alt="anilsworld review">
                             </div>
                         </div>
                         <div class="swiper-slide product-card">
                             <div class="slide-image-custom">
-                                <img src="{{ asset('review/13.jpeg') }}" loading="lazy" alt="Euphoria review">
+                                <img src="{{ asset('review/13.jpeg') }}" loading="lazy" alt="anilsworld review">
                             </div>
                         </div>
                         <div class="swiper-slide product-card">
                             <div class="slide-image-custom">
-                                <img src="{{ asset('review/14.jpeg') }}" loading="lazy" alt="Euphoria review">
+                                <img src="{{ asset('review/14.jpeg') }}" loading="lazy" alt="anilsworld review">
                             </div>
                         </div>
                         <div class="swiper-slide product-card">
                             <div class="slide-image-custom">
-                                <img src="{{ asset('review/15.jpeg') }}" loading="lazy" alt="Euphoria review">
+                                <img src="{{ asset('review/15.jpeg') }}" loading="lazy" alt="anilsworld review">
                             </div>
                         </div>
 

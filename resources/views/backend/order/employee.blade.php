@@ -444,7 +444,7 @@
 
             loading.show();
             $.ajax({
-                url: `/euphoriadmin/order/edit/${orderId}`,
+                url: `/anilsworlddmin/order/edit/${orderId}`,
                 method: 'GET',
                 success: function(response) {
                     loading.hide();
