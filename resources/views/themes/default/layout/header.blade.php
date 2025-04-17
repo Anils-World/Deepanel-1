@@ -83,28 +83,29 @@
                 </div><!-- /.overflow-hidden -->
             </div><!-- /.container -->
 
-            <div class="border-top mt-auto pb-2">
-                <div class="container d-flex align-items-center">
+            <div class="border-top mt-auto">
+                {{-- <div class="container d-flex align-items-center">
                     <label for="footerSettingsLanguage_mobile" class="me-2 text-secondary">Language</label>
                     <select id="footerSettingsLanguage_mobile"
                         class="form-select form-select-sm bg-transparent border-0" aria-label="Default select example"
                         name="store-language">
                         <option class="footer-select__option" selected>Bangla</option>
                     </select>
-                </div>
+                </div> --}}
 
                 <div class="container d-flex align-items-center">
-                    <label for="footerSettingsCurrency_mobile" class="me-2 text-secondary">Currency</label>
-                    <select id="footerSettingsCurrency_mobile"
+                    <label for="footerSettingsCurrency_mobile" class="me-2 text-secondary">Powered By
+                        Anils-World</label>
+                    {{-- <select id="footerSettingsCurrency_mobile"
                         class="form-select form-select-sm bg-transparent border-0" aria-label="Default select example"
                         name="store-language">
                         <option selected>BDT</option>
-                    </select>
+                    </select> --}}
                 </div>
 
-                <ul class="container social-links list-unstyled d-flex flex-wrap mb-0">
+                {{-- <ul class="container social-links list-unstyled d-flex flex-wrap mb-0">
                     <li>
-                        <a href="https://www.facebook.com/@euphoriaknit" target="_blank"
+                        <a href="https://www.facebook.com/@anilsworld" target="_blank"
                             class="footer__social-link d-block ps-0">
                             <svg class="svg-icon svg-icon_facebook" width="9" height="15" viewBox="0 0 9 15"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -112,7 +113,7 @@
                             </svg>
                         </a>
                     </li>
-                </ul>
+                </ul> --}}
             </div>
         </nav><!-- /.navigation -->
     </div>
@@ -129,7 +130,7 @@
             <div class="heeader-top__right flex-1 d-flex gap-1 justify-content-end">
                 <ul class="social-links list-unstyled d-flex flex-wrap mb-0">
                     <li>
-                        <a href="https://www.facebook.com/@euphoriaknit" target="_blank"
+                        <a href="https://www.facebook.com/@anilsworld" target="_blank"
                             class="footer__social-link d-block color-white">
                             <svg class="svg-icon svg-icon_facebook" width="9" height="15" viewBox="0 0 9 15"
                                 xmlns="http://www.w3.org/2000/svg">

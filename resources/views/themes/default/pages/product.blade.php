@@ -259,6 +259,7 @@
                                             style="background-color: {{ $color['code'] }};">
                                             <img src="{{ asset('files/product/' . 'preview-' . $color['image']) }}"
                                                 style="border-radius: .6rem;" alt="{{ $color['name'] }}">
+                                            <span class="color-name">{{ $color['name'] }}</span>
                                         </label>
                                     @endforeach
                                 </div>
@@ -305,7 +306,7 @@
 
                         <div class="product-single__addtocart">
 
-                            <a href="https://m.me/euphoriaknit" target="_blank"
+                            <a href="https://m.me/anilsworld" target="_blank"
                                 class="btn btn-primary messanger btn-custom w-100 text-uppercase font-bd"
                                 type="submit">মেসেঞ্জারে
                                 অর্ডার করুন</a>

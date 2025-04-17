@@ -126,7 +126,7 @@
             @endforeach
         </div>
     </section><!-- /.products-grid -->
-    <section class="brands-carousel container py-5">
+    {{-- <section class="brands-carousel container py-5">
         <h2 class="d-none">Brands</h2>
         <div class="position-relative">
             <div class="swiper-container js-swiper-slider"
@@ -186,9 +186,9 @@
                         <img loading="lazy" src="{{ asset('themes/default/brands') }}/brand7.png" width="94"
                             height="21" alt="">
                     </div>
-                </div><!-- /.swiper-wrapper -->
-            </div><!-- /.swiper-container js-swiper-slider -->
-        </div><!-- /.position-relative -->
+                </div>
+            </div>
+        </div>
 
-    </section><!-- /.products-carousel container -->
+    </section> --}}
 @endsection
