@@ -111,7 +111,7 @@
 </footer>
 
 <!-- Mobile Fixed Footer -->
-{{-- <footer class="footer-mobile container w-100 px-5 d-md-none bg-body">
+<footer class="footer-mobile container w-100 px-5 d-md-none bg-body">
     <div class="row text-center">
         <div class="col-4">
             <a href="{{ route('index') }}" class="footer-mobile__link d-flex flex-column align-items-center">
@@ -151,4 +151,4 @@
             </a>
         </div>
     </div><!-- /.row -->
-</footer> --}}
+</footer>

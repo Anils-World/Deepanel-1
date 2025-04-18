@@ -302,13 +302,13 @@
                             <div class="card-body">
                                 <div class="input-upload mb-4">
                                     <img src=" {{ asset('backend/assets/imgs/theme/upload.svg') }}" alt="">
-                                    <input class="form-control" type="file" name="images[]" multiple
-                                        accept="image/*">
+                                    <input class="form-control" for="imageByProduct" type="file" name="images[]"
+                                        multiple accept="image/*">
                                 </div>
-                                <div class="mb-4">
+                                {{-- <div class="mb-4">
                                     <label for="product_name" class="form-label">Video Link</label>
                                     <input type="text" placeholder="https://" class="form-control" name="link">
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                     </div>

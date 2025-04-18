@@ -306,11 +306,11 @@
 
                         <div class="product-single__addtocart">
 
-                            <a href="https://m.me/anilsworld" target="_blank"
+                            <a href="https://m.me/OnlineGiftShop24" target="_blank"
                                 class="btn btn-primary messanger btn-custom w-100 text-uppercase font-bd"
                                 type="submit">মেসেঞ্জারে
                                 অর্ডার করুন</a>
-                            <a href="https://wa.me/+8801811994026" target="_blank"
+                            <a href="https://wa.me/+8801884720828" target="_blank"
                                 class="btn btn-primary whatsapp btn-custom w-100 text-uppercase font-bd"
                                 type="submit">হোয়াটসঅ্যাপে
                                 অর্ডার করুন</a>
