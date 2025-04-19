@@ -384,11 +384,11 @@
                             href="#tab-additional-info" role="tab" aria-controls="tab-additional-info"
                             aria-selected="false">Additional Information</a>
                     </li>
-                    <li class="nav-item" role="presentation">
+                    {{-- <li class="nav-item" role="presentation">
                         <a class="nav-link nav-link_underscore" id="tab-reviews-tab" data-bs-toggle="tab"
                             href="#tab-reviews" role="tab" aria-controls="tab-reviews" aria-selected="false">Reviews
                             ({{ count($product->comments) }})</a>
-                    </li>
+                    </li> --}}
                 </ul>
                 <div class="tab-content">
                     <div class="tab-pane fade show active" id="tab-description" role="tabpanel"
@@ -403,7 +403,7 @@
                             {!! $product->additional_info !!}
                         </div>
                     </div>
-                    <div class="tab-pane fade" id="tab-reviews" role="tabpanel" aria-labelledby="tab-reviews-tab">
+                    {{-- <div class="tab-pane fade" id="tab-reviews" role="tabpanel" aria-labelledby="tab-reviews-tab">
                         <h2 class="product-single__reviews-title">Reviews</h2>
                         <div class="product-single__reviews-list">
                             @forelse ($product->comments->take(5) as $comment)
@@ -537,7 +537,7 @@
                             </form>
 
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </section>
