@@ -26,7 +26,7 @@ class FrontendController extends Controller
 
         $config = Config::first();
         SEOMeta::setTitle('Home');
-        SEOTools::setDescription('Discover a wide range of stylish and comfortable lingerie options for women in Dhaka, Bangladesh. From bras to panties, Poddoja offers the perfect fit for every occasion. Shop now and enjoy fast delivery!');
+        SEOTools::setDescription('Discover a wide range of stylish and comfortable lingerie options for women in Dhaka, Bangladesh. From bras to panties, Gift Any Time offers the perfect fit for every occasion. Shop now and enjoy fast delivery!');
         SEOMeta::addKeyword(['Stylish Lingerie, Comfortable Undergarments, Women\'s Fashion']);
         SEOMeta::setCanonical('https://synexdigital.com' . request()->getPathInfo());
         $category = ProductCategory::all();

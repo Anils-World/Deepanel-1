@@ -623,12 +623,12 @@
                     var disabled = size.stock > 0 ? '' : 'disabled';
                     var checked = index == 0 ? 'checked' : ''; // Select the first size by default
                     var outOfStockClass = size.stock > 0 ? '' :
-                        'out-of-stock'; // Add a class for out-of-stock items
+                        'Out of stock'; // Add a class for out-of-stock items
 
                     sizeOptions.innerHTML += `
                         <input type="radio" name="inventory_id" id="size-${size.size_id}" value="${size.inventory_id}" ${checked} ${disabled}>
                         <label class="swatch js-swatch ${outOfStockClass}" for="size-${size.size_id}">
-                            ${size.size_name}
+                            ${size.size_name} ${outOfStockClass}
                         </label>
                         `;
                 });

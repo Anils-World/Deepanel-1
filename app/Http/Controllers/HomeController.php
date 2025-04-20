@@ -38,8 +38,8 @@ class HomeController extends Controller
         }
 
         SEOMeta::setTitle('About');
-        SEOMeta::addMeta('title', 'Elevate Your Intimate Style: Discover Poddoja\'s Exquisite Lingerie Collection');
-        SEOTools::setDescription('Immerse yourself in the world of Poddoja, where luxury meets comfort in every stitch. Explore our curated selection of premium lingerie, meticulously crafted to enhance your confidence and style.');
+        SEOMeta::addMeta('title', 'Elevate Your Intimate Style: Discover Gift Any Time\'s Exquisite Lingerie Collection');
+        SEOTools::setDescription('Immerse yourself in the world of Gift Any Time, where luxury meets comfort in every stitch. Explore our curated selection of premium lingerie, meticulously crafted to enhance your confidence and style.');
         SEOMeta::addKeyword('Luxury Lingerie, Premium Intimate Apparel, Comfortable Underwear');
         return view("themes.$slug.pages.about");
     }
@@ -63,8 +63,8 @@ class HomeController extends Controller
             $slug = $theme->slug;
         }
         SEOMeta::setTitle('Policy');
-        SEOMeta::addMeta('title', 'Privacy Policy | Poddoja: Your Ultimate Lingerie Destination');
-        SEOTools::setDescription('At Poddoja, we value your privacy. Learn more about how we protect your personal information while providing you with the finest lingerie selections. Shop confidently at Poddoja.');
+        SEOMeta::addMeta('title', 'Privacy Policy | Gift Any Time: Your Ultimate Lingerie Destination');
+        SEOTools::setDescription('At Gift Any Time, we value your privacy. Learn more about how we protect your personal information while providing you with the finest lingerie selections. Shop confidently at Gift Any Time.');
         SEOMeta::addKeyword('Privacy Policy, Lingerie Privacy, Confidentiality, Secure Shopping');
 
         return view("themes.$slug.pages.privacy");

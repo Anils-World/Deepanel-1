@@ -32,7 +32,7 @@ return [
     'env' => env('APP_ENV', 'production'),
 
     //Canonical URL
-    'canonical_url' => 'https://poddoja.com',
+    'canonical_url' => 'https://Gift Any Time.com',
 
     /*
     |--------------------------------------------------------------------------

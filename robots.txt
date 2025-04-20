@@ -3,4 +3,4 @@ Disallow: /sd_admin/
 Disallow: /admin/
 Disallow: /login
 
-Sitemap: https://poddoja.com/sitemap.xml
+Sitemap: https://Gift Any Time.com/sitemap.xml
