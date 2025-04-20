@@ -42,7 +42,7 @@
 
                 <ul class="social-links list-unstyled d-flex flex-wrap mb-0">
                     <li>
-                        <a href="https://www.facebook.com/@anilsworld" target="_blank"
+                        <a href="https://www.facebook.com/@OnlineGiftShop24" target="_blank"
                             class="footer__social-link d-block">
                             <svg class="svg-icon svg-icon_facebook" width="9" height="15" viewBox="0 0 9 15"
                                 xmlns="http://www.w3.org/2000/svg">
